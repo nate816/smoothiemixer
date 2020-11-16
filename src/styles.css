@@ -1,0 +1,255 @@
+/* ==========================================================================
+ Resets
+ ========================================================================== */
+
+.clearfix:before,
+.clearfix:after {
+  content: " "; /* 1 */
+  display: table; /* 2 */
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+nav, a, .button {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+      -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+
+button:focus { outline:none; }
+
+::-moz-selection { background: #b6d4fc; text-shadow: none; }
+
+::selection { background: #b6d4fc; text-shadow: none; }
+
+audio, canvas, img, video { vertical-align: middle; }
+
+fieldset { border: 0; margin: 0; padding: 0; }
+
+textarea { resize: vertical; }
+
+/* ==========================================================================
+ End Resets
+ ========================================================================== */
+
+html { background-image: url('./img/ios-linen.jpg'); height:100%; font-size: 1em; line-height: 1.4; }
+
+*, *:before, *:after {
+-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+}
+
+hr { width:120%; border-color: #5e5c5b; height: 2px; margin: 30px 0 30px -26%; }
+
+/* typography and links */
+p { font: 1em Helvetica, Arial, sans-serif; color:#1976d2; line-height:1.4; }
+ul { padding-inline-start:30px; margin:0.5em 0; }
+li { font: 1.1em Helvetica, Arial, sans-serif; color:#d9d9d9; line-height:1.5;}
+h1 { font:600 3em bebas-neue-pro, sans-serif; font-weight: 400; color:#26c4b4; margin:0.5em 0 0; }
+h2 { font:400 1.8em bebas-neue-pro, sans-serif; font-weight: 400; color:#26c4b4; margin:0.5em 0 0; }
+h3 { font: 400 1em Helvetica, Arial, sans-serif; color:#26c4b4; margin:1.5em 0 0; }
+h4 { font:400 2em bebas-neue-pro, sans-serif; color:#4e9ce9; margin:0; }
+h5 { font: 1.25em Helvetica, Arial, sans-serif; color:#1976d2; font-weight:bold; font-style:italic; line-height:inherit; margin:0.5em; }
+h3.val { color:#e09868; text-align:center; line-height:inherit; width:120%; margin: 15px 0 20px -26%; }
+h3.val a { color:#e09868; line-height:inherit; }
+.red { color:#e09868; }
+@font-face {
+  font-family: 'varela_roundregular';
+  src: url('./fonts/varelaround-regular-webfont.eot');
+  src: url('./fonts/varelaround-regular-webfont.eot?#iefix') format('embedded-opentype'),
+       url('./fonts/varelaround-regular-webfont.woff') format('woff'),
+       url('./fonts/varelaround-regular-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+button { font:400 1.55em bebas-neue-pro, sans-serif; font-weight: 400; border:none; cursor: pointer; text-transform: capitalize;  }
+a { text-decoration:none; color:#009688; transition:0.4s; -moz-transition:0.4s; -webkit-transition:0.4s; margin:0; }
+a:hover { text-decoration:none; color:#00913f; }
+a.button { font-weight:bold; }
+::placeholder { font-size: .8em; text-align:left; opacity:0.9; }
+:-ms-input-placeholder { font-size: .8em; text-align:left;}
+::-ms-input-placeholder { font-size: .8em; text-align:left;}
+
+.black { z-index:-1; background-color:black; background-attachment: fixed; position:fixed; height:100%; width:100%; top:0; left:0; opacity:0.2; display:block;}
+#wrapper { width: 100%; margin:40px auto; text-align:center; }
+header { width: 668px; margin:0 auto; }
+.nav { width:100%;  margin-top:35px; color:#e5e5e5; text-transform:capitalize; }
+.nav button { float:left; margin-left:1px; text-decoration:none; color:white !important; background:#1976d2; padding:15px 47px; transition:0.4s; -moz-transition:0.4s; -webkit-transition:0.4s; text-transform: capitalize; }
+.nav button:hover { background:#004ba0; cursor:pointer; }
+.nav button.nav-right { background:#ff8f00; }
+.nav button.nav-right:hover { background:#c56000; }
+img.logo { width:200px; height:auto;}
+
+#container { position:relative; width:665px; text-align:left; height:auto; padding:35px 15px 35px 150px; margin:20px auto 0 auto; background:rgba(35, 35, 35, 0.6); box-shadow: inset 0px 0px 15px #18978a; border-radius:6px; }
+.recipe { position: relative; }
+#show { width:120%; margin: 12px 0 5px -25%;  text-align:center; }
+#show p { font-style: italic; color:#c0bebe; }
+
+/*keyword search section*/
+#search { width:665px; margin:20px auto 0 auto; }
+.search-left { float:left; }
+.search-right { float:right; }
+#search input { display:block; float:left; width: 200px; margin-right:4px; font-size:1em; padding: 21px 10px; background-color:#e5e5e5; outline:none; border:0; text-align:left; border-top-left-radius: 6px; border-bottom-left-radius: 6px; }
+
+.searchBtn { padding: 16px 20px; background:#009688; color:#ffffff; border:none; transition:0.6s; -moz-transition:0.6s; -webkit-transition:0.6s;  border-top-right-radius: 6px; border-bottom-right-radius: 6px; }
+.listAllBtn { padding: 16px 40px; background:#ff8f00; color:#ffffff; border:none; transition:0.6s; -moz-transition:0.6s; -webkit-transition:0.6s;  border-radius: 6px; }
+
+.searchBtn:hover { background:#00675b; cursor:pointer;  }
+.listAllBtn:hover { background: #c56000; }
+
+
+/*classes*/
+.nav-mid { margin-right: 2px; }
+.nav-left { margin-right: 2px; border-top-left-radius: 6px; border-bottom-left-radius: 6px; }
+.nav-right { border-top-right-radius: 6px; border-bottom-right-radius: 6px; }
+
+/* smoothie images: */
+.smoothie { position:absolute; top:50px; left:55px; z-index:2; }
+.smoothie-multi { position:absolute; top:10px; left:-105px; z-index:5;}
+.smoothie img, .smoothie-multi img { width:55px; height:auto; }
+/* keyword div */
+.keyword-wrapper { position:absolute; width:55px; height:auto; margin:15px 0 0 -100px; z-index:2; padding-bottom:10px; }
+.listAll-wrapper { position:absolute; width:55px; height:auto; margin:15px 0 0 -100px; z-index:2; padding-bottom:10px; }
+
+
+
+/* ==========================================================================
+ Media Queries
+ ========================================================================== */
+
+@media only screen and (max-width: 823px) {
+  /* Style adjustments for viewports that meet the condition */
+  /* font sizes: */
+  p { font: 1.1em Helvetica, Arial, sans-serif; color:#3689dc; line-height:inherit; }
+  ul { padding-inline-start:22px; }
+  h1 { font-size: 2.5em; margin:0; }
+  h4 { font-size: 1.6em; }
+  h3.val, h3.val a { color:#e09868; line-height:inherit; }
+  /*++++++++++++++++++++++*/
+  #wrapper { height:100%; border-radius:0; margin:0 auto; padding:15px 5px 0 5px; border-top:6px solid #1976d2;  }
+  header { width:100%; }
+  img.logo { display:none; }
+  .nav { height:auto; margin:15px auto 0 auto; }
+  #container { width: 99%; height:auto; font-size:.9em; padding:20px 15px 30px 35px; }
+  .smoothie img { display:none; }
+  .recipe { text-align: center; }
+  .recipe ul { padding-inline-start: 0;}
+  .recipe li { list-style-type: none;}
+  /* BUTTONS / SEARCH */
+  .nav button { float:left; height:auto; margin:2px; width:49.2%; border-radius:6px; display:block; padding:10px; font-size:1.4em; }
+  .listAllBtn { height:auto; font-size:1.4em; padding:10px 40px; } 
+  .searchBtn { height:auto; font-size:1.4em; padding:10px 25px; }
+  /* searching */
+  #search { width:99%; }
+  #search input { width:auto; padding:15px 10px; font-size:0.9em; }
+  /* *********/
+  /* smoothie images: */
+  /* HR: */
+  hr { width:96%; margin: 0; }
+  #show { width:100%; margin: 25px 0 0 -18px; }
+ 
+}
+@media only screen and (max-width: 650px) {
+  .nav button { width:49%; }
+}
+@media only screen and (max-width: 520px) { 
+  /* iphone x, pixel 2, etc... */
+  .nav button { width:99%; }
+  #search input { display: inline-block; float:none; }
+  .search-right { margin-top:15px; }
+  .searchBtn { padding:7px 25px 13px; }
+  .search-left { float:none; }
+  .search-right { float:none; }
+}
+@media only screen and (max-width: 360px) { 
+  /* galaxy s5, IPHONE 5..OLD AF...*/
+ /* search button: */
+ #search-left { width:60%; }
+ input.button { padding:11px 24px; }
+}
+
+@media print,
+     (-o-min-device-pixel-ratio: 5/4),
+     (-webkit-min-device-pixel-ratio: 1.25),
+     (min-resolution: 120dpi) {
+  /* Style adjustments for high resolution devices */
+}
+
+/* ==========================================================================
+ Print styles.
+ Inlined to avoid required HTTP connection: h5bp.com/
+ ========================================================================== */
+
+@media print {
+  * {
+      background: transparent !important;
+      color: #000 !important; /* Black prints faster: h5bp.com/s */
+      box-shadow: none !important;
+      text-shadow: none !important;
+  }
+
+  a,
+  a:visited {
+      text-decoration: underline;
+  }
+
+  a[href]:after {
+      content: " (" attr(href) ")";
+  }
+
+  abbr[title]:after {
+      content: " (" attr(title) ")";
+  }
+
+  /*
+   * Don't show links for images, or javascript/internal links
+   */
+
+  .ir a:after,
+  a[href^="javascript:"]:after,
+  a[href^="#"]:after {
+      content: "";
+  }
+
+  pre,
+  blockquote {
+      border: 1px solid #999;
+      page-break-inside: avoid;
+  }
+
+  thead {
+      display: table-header-group; /* h5bp.com/t */
+  }
+
+  tr,
+  img {
+      page-break-inside: avoid;
+  }
+
+  img {
+      max-width: 100% !important;
+  }
+
+  @page {
+      margin: 0.5cm;
+  }
+
+  p,
+  h2,
+  h6 {
+      orphans: 6;
+      widows: 6;
+  }
+
+  h2,
+  h6 {
+      page-break-after: avoid;
+  }
+}

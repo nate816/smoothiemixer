@@ -1,9 +1,11 @@
 import React, { useState } from "react"
+import { BsEnvelopeFill } from 'react-icons/bs';
 
 function FooterDisplay(props){
 
     const [ searchTerm, setSearchTerm ] = useState("");
     const [ placeholder ] = useState("e.g. kale, paleo");
+    const yr = new Date().getFullYear();
 
     function handleChange(event){
         const { value } = event.target
@@ -49,7 +51,10 @@ function FooterDisplay(props){
                     </button>
                 </form>
             </div>
-            
+            <footer>
+                <p>&copy; {yr} Nate Fazakerly &nbsp;
+                <a href="mailto:nate@natefaz.com"><BsEnvelopeFill style={{verticalAlign: 'middle'}} />&nbsp;contact</a></p>
+            </footer>
         </div>
     )
 }

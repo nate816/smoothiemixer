@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"
 import arrRecipes from "./smoothieData"
 import NavDisplay from "./NavDisplay"
-import { img1, img2, img8 } from '../img/index.js'
+import { img1, img2, img3 } from '../img/index.js'
 import FooterDisplay from "./FooterDisplay"
 
 function App(){
@@ -68,7 +68,7 @@ function App(){
         }
         else {
             setSmoothieImg(()=>{
-                return (img8.default)
+                return (img3.default)
             })
         }
         
@@ -171,7 +171,7 @@ function App(){
                             img = img2.default
                         }
                         else {
-                            img = img8.default
+                            img = img3.default
                         }
                         x++
                         return (

@@ -17,6 +17,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+  "homepage": "https://smoothiemixer.netlify.app",
   "eslintConfig": {
     "extends": [
       "react-app",

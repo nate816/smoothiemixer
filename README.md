@@ -1,5 +1,5 @@
 # Getting Started with Create React App
 
-This project was created by [http://natefaz.com](Nate Fazakerly) using Javascript(ES6), React, CSS and HTML and deployed with Netlify.
+This project was created by Nate Fazakerly [http://natefaz.com] using Javascript(ES6), React, CSS and HTML and deployed with Netlify.
 
-View App: [http://smoothiegenerator.net](Nate Fazakerly)
+View App: [http://smoothiegenerator.net] 

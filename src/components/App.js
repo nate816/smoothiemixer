@@ -23,7 +23,6 @@ function App(){
         //...
         let body = document
         body.onclick = (e)=> {
-            console.log(e.target)
             const { localName, id } = e.target
             if (localName === "html" || id === "wrapper"){
                 setRecipe(()=> {

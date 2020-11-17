@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import { BsEnvelopeFill } from 'react-icons/bs';
+import { BsSearch } from 'react-icons/bs';
 
 function FooterDisplay(props){
 
@@ -16,44 +17,45 @@ function FooterDisplay(props){
 
 
     return (
-        <div id="search" className="clearfix">
-            <div className="search-left">
-                <button
-                    className="listAllBtn"
-                    name="all"
-                    onClick = {(event) => { 
-                        event.preventDefault()
-                        return props.handleSubmit("all", event)
-                    }}
-                >
-                List all smoothies
-                </button>
-            </div>
-        
-            <div className="search-right">
-                <form>
-                    <input 
-                        value = { searchTerm }
-                        placeholder = { placeholder }
-                        onChange = { handleChange }
-                    >
-                    </input>
+        <div>
+            <div id="search" className="clearfix">
+                <div className="search-left">
                     <button
-                        type="submit"
-                        className="searchBtn" 
-                        title="search ingredients"
+                        className="listAllBtn"
+                        name="all"
                         onClick = {(event) => { 
                             event.preventDefault()
-                            return props.handleSubmit(searchTerm, event)
+                            return props.handleSubmit("all", event)
                         }}
                     >
-                    <div className="sbtn">Search</div>
+                    List all smoothies
                     </button>
-                </form>
+                </div>
+            
+                <div className="search-right">
+                    <form>
+                        <input 
+                            value = { searchTerm }
+                            placeholder = { placeholder }
+                            onChange = { handleChange }
+                        >
+                        </input>
+                        <button
+                            type="submit"
+                            className="searchBtn" 
+                            title="search ingredients"
+                            onClick = {(event) => { 
+                                event.preventDefault()
+                                return props.handleSubmit(searchTerm, event)
+                            }}
+                        >
+                        <div><BsSearch /></div>
+                        </button>
+                    </form>
+                </div>
             </div>
             <footer>
-                <p>&copy; {yr} Nate Fazakerly &nbsp;
-                <a href="mailto:nate@natefaz.com"><BsEnvelopeFill style={{verticalAlign: 'middle'}} />&nbsp;contact</a></p>
+            <p>&copy; {yr} Nate Fazakerly<span style={{float: 'right'}}><a href="mailto:nate@natefaz.com"><BsEnvelopeFill style={{verticalAlign: 'middle'}} />&nbsp;contact</a></span></p>
             </footer>
         </div>
     )

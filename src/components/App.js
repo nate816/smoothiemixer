@@ -3,9 +3,9 @@ import arrRecipes from "./smoothieData"
 import NavDisplay from "./NavDisplay"
 import { img1, img2, img3 } from '../img/index.js'
 import FooterDisplay from "./FooterDisplay"
+import { BsX } from "react-icons/bs"
 
 function App(){
-
     //initiate recipe state with useState:
     const [ recipe, setRecipe ] = 
         useState(()=> { 
@@ -16,16 +16,21 @@ function App(){
         })
     //smoothie image state with useState:
     const [ smoothieImg, setSmoothieImg ] = useState("")
+    const blue = "#3689dc", orange = "#ff8f00", green = "#009688"
+    const [ bordercolor, setBorderColor ] = useState(blue)
+    const [ showHideX, setshowHideX ] = useState("none")
+    const [ posX, setPosX ] = useState("x-abs")
 
     //only execute once after component mounts (ComponentDidMount)
     //(if second arg is empty array - if not, set to listen for a variable change):
     useEffect(()=> {
         //...
-        let body = document
-        body.onclick = (e)=> {
+        const doc = document
+        doc.onclick = (e)=> {
             const { localName, id } = e.target
             if (localName === "html" || id === "wrapper"){
                 setRecipe(()=> {
+                    setshowHideX("none")
                     return (
                         <div id="show"><p>Recipe will show here.</p>
                         </div>
@@ -34,14 +39,38 @@ function App(){
                 setSmoothieImg("")
             }
         }
-    }, [recipe])
+        doc.onkeyup = (e) => {
+            const { key } = e
+            if (key === 'Escape' && showHideX !== 'none'){ //if recipe is showing
+                setRecipe(()=> {
+                    setshowHideX("none")
+                    return (
+                        <div id="show"><p>Recipe will show here.</p>
+                        </div>
+                        )
+                })
+                setSmoothieImg("")
+            }
+        }
+        doc.onscroll = () => {
+            const scroll = window.scrollY
+            if (scroll > 225){
+                setPosX("x-fixed");
+            }
+            else {
+                setPosX("x-abs");
+            }
+        }   
+    }, [recipe, showHideX])
     
     function handleClick(event){
         const { value } = event.target
+        
         let newRecipe = {}
 
         if(value === "Random"){
             newRecipe = arrRecipes[Math.floor(Math.random() * arrRecipes.length)]
+            setBorderColor(orange)
         }
         else {
             let newArray = []
@@ -51,6 +80,7 @@ function App(){
                 }
             }      
             newRecipe = newArray[Math.floor(Math.random() * newArray.length)]
+            setBorderColor(blue)
         }
         
         const { title, flavor, ingredients, directions } = newRecipe
@@ -73,6 +103,7 @@ function App(){
         
         //setState to new state with function destructured from useState array 2nd arg 
         setRecipe(() => {
+            setshowHideX("block")
             let x = 0
             return (
                 <div>
@@ -96,8 +127,9 @@ function App(){
 
         const { name } = e.target
                 
-        if(searchTerm === ""){
+        if(searchTerm === "" || searchTerm === null){ //searched null
             setRecipe(()=> {
+                setshowHideX("none")
                 return (
                     <div id="show"><p>
                     Recipe will show here.
@@ -132,6 +164,9 @@ function App(){
         })
 
         if(name !== "all"){ //searched keyword
+
+            setBorderColor(green)
+
             arrRecipes.forEach((item)=>{
                 if(isMult){ //multiple search terms
                     for(let x = 0; x < arrSearchTerms.length; x++){
@@ -153,16 +188,18 @@ function App(){
         }
 
         else { //listing all
+            setBorderColor(orange) 
             arrKeywords = arrRecipes //just set arrKeywords to all 
         }
 
         setRecipe(() => {
+            setshowHideX("block")
             let x = 0 //keys
             let i = 0 //keys
             let img
             return (
                 <div>
-                    {arrKeywords.map((item) => {
+                    { arrKeywords.map((item) => {
                         if(item.flavor === "Sweet and Savory"){
                             img = img1.default
                         }
@@ -196,9 +233,23 @@ function App(){
         })
     }
 
+    function handleClose(){
+        setRecipe(()=> {
+            setshowHideX("none")
+            return (
+                <div id="show"><p>Recipe will show here.</p>
+                </div>
+                )
+        })
+        setSmoothieImg("")
+    }
+
     return( //Render Child Components
-        <div id="wrapper" className="clearfix">
-            <header className="clearfix">
+        <div 
+            id="wrapper" 
+            style = {{ borderColor: bordercolor }}
+            className = "clearfix">
+            <header className = "clearfix">
                 <h1>Smoothie Mixer</h1>
                 <h4>A Smoothie Generator App</h4>
                 <NavDisplay
@@ -207,6 +258,14 @@ function App(){
                 />
             </header>
             <div id="container" className="clearfix">
+                <div 
+                    id = "x" 
+                    style = {{ display: showHideX }}
+                    className = { posX }
+                    onClick = { handleClose } >
+                <button><BsX />
+                </button>
+                </div>
                 { recipe }
                 <div className="smoothie">
                     <img src={ smoothieImg } alt="" />

@@ -57,19 +57,6 @@ h2 { font:400 1.8em bebas-neue-pro, sans-serif; font-weight: 400; color:#26c4b4;
 h3 { font: 400 1em Helvetica, Arial, sans-serif; color:#26c4b4; margin:1.5em 0 0; }
 h4 { font:400 2em bebas-neue-pro, sans-serif; color:#4e9ce9; margin:0; }
 h5 { font: 1.25em Helvetica, Arial, sans-serif; color:#1976d2; font-weight:bold; font-style:italic; line-height:inherit; margin:0.5em; }
-h3.val { color:#e09868; text-align:center; line-height:inherit; width:120%; margin: 15px 0 20px -26%; }
-h3.val a { color:#e09868; line-height:inherit; }
-.red { color:#e09868; }
-@font-face {
-  font-family: 'varela_roundregular';
-  src: url('./fonts/varelaround-regular-webfont.eot');
-  src: url('./fonts/varelaround-regular-webfont.eot?#iefix') format('embedded-opentype'),
-       url('./fonts/varelaround-regular-webfont.woff') format('woff'),
-       url('./fonts/varelaround-regular-webfont.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-
-}
 
 button { font:400 1.55em bebas-neue-pro, sans-serif; font-weight: 400; border:none; cursor: pointer; text-transform: capitalize; background:none;  }
 a { text-decoration:none; color:#1976d2; transition:0.4s; -moz-transition:0.4s; -webkit-transition:0.4s; margin:0; }
@@ -147,12 +134,12 @@ footer { border-top: 1px solid #888; position: relative; text-align:left; font-s
   .smoothie img { display:none; }
   .recipe ul { padding-inline-start: 25px; }
   /* BUTTONS / SEARCH */
-  .nav button { float:left; height:auto; margin:2px; width:49.2%; border-radius:6px; display:block; padding:7px; font-size:1.4em; }
-  .listAllBtn { height:40px; font-size:1.4em; } 
-  .searchBtn { height:40px; font-size:1.4em;  }
+  .nav button { float:left; height:44px; margin:2px; width: calc(50% - 5px); border-radius:6px; display:block; padding:9px 0; font-size:1.4em; }
+  .listAllBtn { height:44px; font-size:1.4em; } 
+  .searchBtn { height:44px; font-size:1.4em;  }
   /* searching */
   #search { width:99%; }
-  #search input { width:150px; height:40px; font-size:0.9em;  }
+  #search input { width:150px; height:44px; font-size:0.9em;  }
   /* *********/
   /* smoothie images: */
   /* HR: */
@@ -162,11 +149,11 @@ footer { border-top: 1px solid #888; position: relative; text-align:left; font-s
 }
 
 @media only screen and (max-width: 650px) {
-  .nav button { width:49%; }
+  /* .nav button { width:49%; } */
 }
 @media only screen and (max-width: 520px) { 
   /* iphone x, pixel 2, etc... */
-  .nav button { width:99%; }
+  /* .nav button { width:99%; } */
   #search input { display: inline-block; float:none; vertical-align: top; }
   .search-right { margin-top:15px; }
   .search-left { float:none; }
@@ -178,11 +165,15 @@ footer { border-top: 1px solid #888; position: relative; text-align:left; font-s
   #search input { border-radius:6px; margin-bottom:10px; } */
 }
 
-@media print,
-     (-o-min-device-pixel-ratio: 5/4),
-     (-webkit-min-device-pixel-ratio: 1.25),
-     (min-resolution: 120dpi) {
-  /* Style adjustments for high resolution devices */
+@font-face {
+  font-family: 'varela_roundregular';
+  src: url('./fonts/varelaround-regular-webfont.eot');
+  src: url('./fonts/varelaround-regular-webfont.eot?#iefix') format('embedded-opentype'),
+       url('./fonts/varelaround-regular-webfont.woff') format('woff'),
+       url('./fonts/varelaround-regular-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+
 }
 
 /* ==========================================================================

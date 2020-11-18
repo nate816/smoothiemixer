@@ -2,7 +2,7 @@ import React from "react";
 
 function NavDisplay(props){ // SENDING props object to be declared in render.
     return(
-            <div className="nav clearfix">
+            <div className="nav">
                 <button
                     value="Sweet"
                     className="nav-left" 

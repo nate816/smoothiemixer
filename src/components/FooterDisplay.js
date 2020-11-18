@@ -18,41 +18,37 @@ function FooterDisplay(props){
 
     return (
         <div>
-            <div id="search" className="clearfix">
-                <div className="search-left">
+            <div id="search">
+                <button
+                    className="listAllBtn"
+                    name="all"
+                    onClick = {(event) => { 
+                        event.preventDefault()
+                        return props.handleSubmit("all", event)
+                    }}
+                >
+                List all smoothies
+                </button>
+            
+                <form>
+                    <input 
+                        value = { searchTerm }
+                        placeholder = { placeholder }
+                        onChange = { handleChange }
+                    >
+                    </input>
                     <button
-                        className="listAllBtn"
-                        name="all"
+                        type="submit"
+                        className="searchBtn" 
+                        title="search ingredients"
                         onClick = {(event) => { 
                             event.preventDefault()
-                            return props.handleSubmit("all", event)
+                            return props.handleSubmit(searchTerm, event)
                         }}
                     >
-                    List all smoothies
+                    <div><BsSearch /></div>
                     </button>
-                </div>
-            
-                <div className="search-right">
-                    <form>
-                        <input 
-                            value = { searchTerm }
-                            placeholder = { placeholder }
-                            onChange = { handleChange }
-                        >
-                        </input>
-                        <button
-                            type="submit"
-                            className="searchBtn" 
-                            title="search ingredients"
-                            onClick = {(event) => { 
-                                event.preventDefault()
-                                return props.handleSubmit(searchTerm, event)
-                            }}
-                        >
-                        <div><BsSearch /></div>
-                        </button>
-                    </form>
-                </div>
+                </form>
             </div>
             <footer>
             <p>&copy; {yr} Nate Fazakerly<span style={{float: 'right'}}><a href="mailto:nate@natefaz.com"><BsEnvelopeFill style={{verticalAlign: 'middle'}} />&nbsp;contact</a></span></p>

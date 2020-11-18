@@ -150,35 +150,32 @@ function App(){
         let arrTemp = []
         let arrSearchTerms = []
 
-        if (searchTerm.includes(",") || searchTerm.includes(", ")){
-            arrTemp = searchTerm.split(',')
+        if (searchTerm.includes(",")){
             isMult = true
-        } else {
-            isMult = false
+            arrTemp = searchTerm.split(',')
+            arrTemp.forEach((item) => {
+                item = item.trim() // remove whitespaces both sides
+                item.replace(/\s/g, '')// remove spaces
+                arrSearchTerms.push(item)
+            })
         }
         
-        arrTemp.forEach((item) => {
-            item = item.trim() // remove whitespaces both sides
-            item.replace(/\s/g, '')// remove spaces
-            arrSearchTerms.push(item)
-        })
-
         if(name !== "all"){ //searched keyword
 
             setBorderColor(green)
 
             arrRecipes.forEach((item)=>{
                 if(isMult){ //multiple search terms
-                    for(let x = 0; x < arrSearchTerms.length; x++){
+                    for(let x of arrSearchTerms){
                         //if you find a match in the array ...
                         if(item.keywords.find(item =>  
-                            item === arrSearchTerms[x] )){
+                            item === x )){
                             arrKeywords.push(item)
-                            x++
+                            break
                         }  
                     }
                 }
-                else{
+                else{ //single term
                     if(item.keywords.find(item => 
                         item === searchTerm )){
                         arrKeywords.push(item)

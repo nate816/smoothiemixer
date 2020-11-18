@@ -157,7 +157,6 @@ footer { border-top: 1px solid #888; position: relative; text-align:left; font-s
 
 @media only screen and (max-width: 400px) { 
   /* iphone x, pixel 2, etc... */
-  /* .nav button { width:99%; } */
   #search { grid-template-columns:45% 55%; }
   #search input { max-width: 120px; }
   .listAllBtn { padding:0;}

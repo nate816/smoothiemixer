@@ -15,7 +15,6 @@ function FooterDisplay(props){
         })
     }
 
-
     return (
         <div>
             <div id="search">

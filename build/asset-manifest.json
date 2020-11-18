@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/static/css/main.d2efcf57.chunk.css",
-    "main.js": "/static/js/main.ed5430af.chunk.js",
-    "main.js.map": "/static/js/main.ed5430af.chunk.js.map",
+    "main.css": "/static/css/main.dfbb5811.chunk.css",
+    "main.js": "/static/js/main.25db3d90.chunk.js",
+    "main.js.map": "/static/js/main.25db3d90.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.64816581.js",
     "runtime-main.js.map": "/static/js/runtime-main.64816581.js.map",
     "static/js/2.1abff187.chunk.js": "/static/js/2.1abff187.chunk.js",
     "static/js/2.1abff187.chunk.js.map": "/static/js/2.1abff187.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/main.d2efcf57.chunk.css.map": "/static/css/main.d2efcf57.chunk.css.map",
+    "static/css/main.dfbb5811.chunk.css.map": "/static/css/main.dfbb5811.chunk.css.map",
     "static/js/2.1abff187.chunk.js.LICENSE.txt": "/static/js/2.1abff187.chunk.js.LICENSE.txt",
     "static/media/smoothie-1.svg": "/static/media/smoothie-1.6dec4d06.svg",
     "static/media/smoothie-2.svg": "/static/media/smoothie-2.c326b573.svg",
@@ -18,7 +18,7 @@
   "entrypoints": [
     "static/js/runtime-main.64816581.js",
     "static/js/2.1abff187.chunk.js",
-    "static/css/main.d2efcf57.chunk.css",
-    "static/js/main.ed5430af.chunk.js"
+    "static/css/main.dfbb5811.chunk.css",
+    "static/js/main.25db3d90.chunk.js"
   ]
 }

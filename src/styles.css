@@ -152,14 +152,14 @@ footer { border-top: 1px solid #888; position: relative; text-align:left; font-s
   /* .nav button { width:99%; } */
   footer { padding:5px; }
   #search { grid-template-columns:40% 60%; }
-  #search input { max-width: 120px; }
+  #search input { max-width: 150px; }
 }
 
 @media only screen and (max-width: 400px) { 
   /* iphone x, pixel 2, etc... */
   /* .nav button { width:99%; } */
-  #search { grid-template-columns:50% 50%; }
-  #search input { max-width: 100px; }
+  #search { grid-template-columns:45% 55%; }
+  #search input { max-width: 120px; }
   .listAllBtn { padding:0;}
 }
 

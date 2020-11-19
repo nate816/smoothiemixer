@@ -87,17 +87,23 @@ function App(){
 
         if(flavor === "Sweet and Savory"){
             setSmoothieImg(()=>{
-                return (img1.default)
+                return (
+                    <img src={img1.default} alt="" />
+                )
             })
         }
         else if(flavor === "Savory"){
             setSmoothieImg(()=>{
-                return (img2.default)
+                return (
+                    <img src={img2.default} alt="" />
+                )
             })
         }
         else {
             setSmoothieImg(()=>{
-                return (img3.default)
+                return (
+                    <img src={img3.default} alt="" />
+                )
             })
         }
         
@@ -265,7 +271,7 @@ function App(){
                 </div>
                 { recipe }
                 <div className="smoothie">
-                    <img src={ smoothieImg } alt="" />
+                    { smoothieImg }
                 </div>
             </div>
             <FooterDisplay

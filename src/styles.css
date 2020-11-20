@@ -162,17 +162,6 @@ footer { border-top: 1px solid #888; position: relative; text-align:left; font-s
   .listAllBtn { padding:0;}
 }
 
-@font-face {
-  font-family: 'varela_roundregular';
-  src: url('./fonts/varelaround-regular-webfont.eot');
-  src: url('./fonts/varelaround-regular-webfont.eot?#iefix') format('embedded-opentype'),
-       url('./fonts/varelaround-regular-webfont.woff') format('woff'),
-       url('./fonts/varelaround-regular-webfont.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-
-}
-
 /* ==========================================================================
  Print styles.
  Inlined to avoid required HTTP connection: h5bp.com/

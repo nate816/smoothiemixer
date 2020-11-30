@@ -174,16 +174,16 @@ function App(){
                 if(isMult){ //multiple search terms
                     for(let x of arrSearchTerms){
                         //if you find a match in the array ...
-                        if(item.keywords.find(item =>  
-                            item === x )){
+                        if(item.keywords.find(itm =>  
+                            itm === x )){
                             arrKeywords.push(item)
                             break
                         }  
                     }
                 }
                 else{ //single term
-                    if(item.keywords.find(item => 
-                        item === searchTerm )){
+                    if(item.keywords.find(itm => 
+                        itm === searchTerm )){
                         arrKeywords.push(item)
                     }
                 }

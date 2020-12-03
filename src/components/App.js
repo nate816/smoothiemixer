@@ -25,6 +25,7 @@ function App(){
     //(if second arg is empty array - if not, set to listen for a variable change):
     useEffect(()=> {
         //...
+        window.scrollTo(0, 0)
         const doc = document
         doc.onclick = (e)=> {
             const { localName, id } = e.target
@@ -85,27 +86,36 @@ function App(){
         
         const { title, flavor, ingredients, directions } = newRecipe
 
-        if(flavor === "Sweet and Savory"){
-            setSmoothieImg(()=>{
-                return (
-                    <img src={img1.default} alt="" />
-                )
-            })
-        }
-        else if(flavor === "Savory"){
-            setSmoothieImg(()=>{
-                return (
-                    <img src={img2.default} alt="" />
-                )
-            })
-        }
-        else {
-            setSmoothieImg(()=>{
-                return (
-                    <img src={img3.default} alt="" />
-                )
-            })
-        }
+        setSmoothieImg(()=>{
+            if(window.innerWidth <= 823){
+                return null
+            }
+            else { //only load an image if not mobile
+                if(flavor === "Sweet and Savory"){
+                    setSmoothieImg(()=>{
+                        return (
+                            <img src={img1.default} alt="" />
+                        )         
+                    })
+                }
+                else if(flavor === "Savory"){
+                    setSmoothieImg(()=>{            
+                        return (
+                            <img src={img2.default} alt="" />
+                        )             
+                    })
+                }
+                else {
+                    setSmoothieImg(()=>{
+                        return (
+                            <img src={img3.default} alt="" />
+                        )                 
+                    })
+                }
+            }
+        })
+
+
         
         //setState to new state with function destructured from useState array 2nd arg 
         setRecipe(() => {
@@ -132,13 +142,15 @@ function App(){
         setSmoothieImg("")
 
         const { name } = e.target
+
+        searchTerm = searchTerm.toLowerCase() //search is case sensitive
                 
         if(searchTerm === "" || searchTerm === null){ //searched null
+            setshowHideX("none")
             setRecipe(()=> {
-                setshowHideX("none")
                 return (
-                    <div id="show"><p>
-                    Recipe will show here.
+                    <div id="show"><p style={{color: orange}}>
+                        Search was blank.
                     </p>
                     </div>
                     )
@@ -160,7 +172,7 @@ function App(){
             isMult = true
             arrTemp = searchTerm.split(',')
             arrTemp.forEach((item) => {
-                item = item.trim() // remove whitespaces both sides
+                item = item.toLowerCase().trim() // remove whitespaces both sides // set to lowercase too
                 item.replace(/\s/g, '')// remove spaces
                 arrSearchTerms.push(item)
             })
@@ -183,7 +195,7 @@ function App(){
                 }
                 else{ //single term
                     if(item.keywords.find(itm => 
-                        itm === searchTerm )){
+                        itm.toLowerCase() === searchTerm )){
                         arrKeywords.push(item)
                     }
                 }
@@ -195,38 +207,61 @@ function App(){
             arrKeywords = arrRecipes //just set arrKeywords to all 
         }
 
+        if (arrKeywords.length < 1){
+            setshowHideX("none")
+            setRecipe(()=> {
+                return (
+                    <div id="show"><p style={{color: orange}}>
+                    No results matching "{ searchTerm }".
+                    </p>
+                    </div>
+                    )
+            })
+            return
+        }
+
+        setshowHideX("block")
+
         setRecipe(() => {
-            setshowHideX("block")
             let x = 0 //keys
             let i = 0 //keys
             let img
+            let isMobile
+            window.innerWidth >= 823 ? isMobile = false : isMobile = true
             return (
                 <div>
                     { arrKeywords.map((item) => {
-                        if(item.flavor === "Sweet and Savory"){
-                            img = img1.default
-                        }
-                        else if(item.flavor === "Savory"){
-                            img = img2.default
+                        if(!isMobile){
+                            if(item.flavor === "Sweet and Savory"){ 
+                                img = img1.default
+                            }
+                            else if(item.flavor === "Savory"){
+                                img = img2.default
+                            }
+                            else {
+                                img = img3.default
+                            }
                         }
                         else {
-                            img = img3.default
+                            img = ""
                         }
                         x++
                         return (
-                            <div key={x} className='recipe'>
-                            <h2>{item.title}</h2>
-                            <ul>
-                                {item.ingredients.map((item) => {
-                                    i++
-                                    return <li key={i}>{ item }</li>
-                                })}
-                            </ul>
-                            <h3>{item.directions}</h3>
-                            <div className="smoothie-multi">
-                                <img src={ img } alt="" />
-                            </div>
-                            <hr />
+                            <div className='recipe'>
+                                <div key={x}>
+                                    <h2>{item.title}</h2>
+                                    <ul>
+                                        {item.ingredients.map((item) => {
+                                            i++
+                                            return <li key={i}>{ item }</li>
+                                        })}
+                                    </ul>
+                                    <h3>{item.directions}</h3>
+                                    <div className="smoothie-multi">
+                                        <img src={ img } alt="" />
+                                    </div>
+                                    <hr />
+                                </div>
                             </div>
                         )
                     })}
@@ -251,8 +286,8 @@ function App(){
         <div 
             id="wrapper" 
             style = {{ borderColor: bordercolor }}
-            className = "clearfix">
-            <header className = "clearfix">
+            >
+            <header>
                 <h1>Smoothie Mixer</h1>
                 <h4>A Smoothie Generator App</h4>
                 <NavDisplay
@@ -260,7 +295,7 @@ function App(){
                     value = "test"
                 />
             </header>
-            <div id="container" className="clearfix">
+            <div id="container">
                 <div 
                     id = "x" 
                     style = {{ display: showHideX }}

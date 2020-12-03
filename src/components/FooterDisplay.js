@@ -44,10 +44,6 @@ function FooterDisplay(props){
                             event.preventDefault()
                             return props.handleSubmit(searchTerm, event)
                         }}
-                        onTouchEnd = {(event) => { 
-                            event.preventDefault()
-                            return props.handleSubmit(searchTerm, event)
-                        }}
                     >
                     <div><BsSearch /></div>
                     </button>

@@ -111,6 +111,17 @@ footer { border-top: 1px solid #888; position: relative; text-align:left; font-s
 .keyword-wrapper { position:absolute; width:55px; height:auto; margin:15px 0 0 -100px; z-index:2; padding-bottom:10px; }
 .listAll-wrapper { position:absolute; width:55px; height:auto; margin:15px 0 0 -100px; z-index:2; padding-bottom:10px; }
 
+.visuallyhidden {
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+  -webkit-clip-path: inset(0px 0px 99.9% 99.9%);
+  clip-path: inset(0px 0px 99.9% 99.9%);
+  overflow: hidden;
+  height: 1px;
+  width: 1px;
+  padding: 0;
+  border: 0;
+}
 
 /* ==========================================================================
  Media Queries

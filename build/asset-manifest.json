@@ -1,23 +1,18 @@
 {
   "files": {
-    "main.css": "/static/css/main.d8d1c795.chunk.css",
-    "main.js": "/static/js/main.155700ea.chunk.js",
-    "main.js.map": "/static/js/main.155700ea.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.4b80b182.js",
-    "runtime-main.js.map": "/static/js/runtime-main.4b80b182.js.map",
-    "static/js/2.6d326ffd.chunk.js": "/static/js/2.6d326ffd.chunk.js",
-    "static/js/2.6d326ffd.chunk.js.map": "/static/js/2.6d326ffd.chunk.js.map",
+    "main.css": "/static/css/main.78db5148.chunk.css",
+    "main.js": "/static/js/main.04f7ad59.chunk.js",
+    "main.js.map": "/static/js/main.04f7ad59.chunk.js.map",
+    "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
+    "runtime~main.js.map": "/static/js/runtime~main.a8a9905a.js.map",
+    "static/js/2.2ae84955.chunk.js": "/static/js/2.2ae84955.chunk.js",
+    "static/js/2.2ae84955.chunk.js.map": "/static/js/2.2ae84955.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/main.d8d1c795.chunk.css.map": "/static/css/main.d8d1c795.chunk.css.map",
-    "static/js/2.6d326ffd.chunk.js.LICENSE.txt": "/static/js/2.6d326ffd.chunk.js.LICENSE.txt",
-    "static/media/smoothie-2.svg": "/static/media/smoothie-2.c326b573.svg",
-    "static/media/smoothie-7.svg": "/static/media/smoothie-7.20492b15.svg",
-    "static/media/smoothie-8.svg": "/static/media/smoothie-8.4f9c7836.svg"
-  },
-  "entrypoints": [
-    "static/js/runtime-main.4b80b182.js",
-    "static/js/2.6d326ffd.chunk.js",
-    "static/css/main.d8d1c795.chunk.css",
-    "static/js/main.155700ea.chunk.js"
-  ]
+    "precache-manifest.474a8861d29546135df458466f166bac.js": "/precache-manifest.474a8861d29546135df458466f166bac.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.78db5148.chunk.css.map": "/static/css/main.78db5148.chunk.css.map",
+    "static/media/smoothie-2.svg": "/static/media/smoothie-2.09a2215d.svg",
+    "static/media/smoothie-7.svg": "/static/media/smoothie-7.5cfebb72.svg",
+    "static/media/smoothie-8.svg": "/static/media/smoothie-8.3c4d304e.svg"
+  }
 }
